@@ -3,3 +3,45 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+.nav {
+    padding-top: 55px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav__list {
+    display: flex;
+  }
+
+  .phone__list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 20px;
+      padding: 20px;
+
+  }
+
+  .phoneCard {
+      border-style: double;
+      padding-bottom: 10px;
+  }
+  .phoneCard__item {
+      padding: 10px;
+  }
+  .phoneCard__item_h2 {
+    text-align: center;
+}
+
+  button {
+      background: black;
+      color: blanchedalmond;
+      width: 100px;
+      height: 40px;
+      margin-left: 114px;
+      margin-top: 50px;
+
+
+
+  }
