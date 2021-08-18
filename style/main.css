@@ -45,3 +45,11 @@
 
 
   }
+
+.light__style {
+    background: lightblue;
+  }
+.dark__style  {
+    background: grey;
+}
+  

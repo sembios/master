@@ -69,3 +69,12 @@ buttons.forEach(button => {
 
     button.addEventListener('click', handleClick)
     })
+
+
+let data = new Date().getHours()
+if (data > 15) (
+    document.body.classList.add('dark__style')
+)
+else {
+    document.body.classList.add('light__style')
+}
