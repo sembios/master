@@ -6,12 +6,12 @@ i = 0
 
 btn.addEventListener('click', function () {
     i++
-    count.textContent = i
     let newP = document.createElement('p')
-    if(!input.value) return
+    if(!input.value) return  count.textContent = i--
     newP.textContent = input.value
     wrapper.append(newP)
     input.value = ''
+    count.textContent = i
     
     let btnD = document.createElement('button')
     btnD.className = 'btnDel'
