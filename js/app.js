@@ -76,6 +76,10 @@ function checkInputFields(inputArr){
         const newRecordDiv = document.createElement('div');
         newRecordDiv.classList.add('contact-item');
         newRecordDiv.innerHTML = `
+        <div class = "contact-id">
+            <span id = "labelling">ID: </span>
+            <span id = "contact-id-content">${item.id}</span>
+        </div>
 
         <div class = "contack__list--item">
             <span id = "labelling">Имя: </span>
@@ -103,18 +107,20 @@ function checkInputFields(inputArr){
         recordContainer.appendChild(newRecordDiv);
     }
 
-recordContainer.addEventListener('click', function(event){
-    if(event.target.id === 'delete-btn'){
-        let recordItem = event.target.parentElement;
-        recordContainer.removeChild(recordItem);
-        let tempContactList = ContactArray.filter(function(record){
-            return (record.id !== parseInt(recordItem.firstElementChild.lastElementChild.textContent));
-        });
-        ContactArray = tempContactList;
-        localStorage.setItem('contacts', JSON.stringify(ContactArray));
-    }
-});
-
+    recordContainer.addEventListener('click', function(event){
+        //console.log(event.target);
+        if(event.target.id === 'delete-btn'){
+            // removing from DOM
+            let recordItem = event.target.parentElement;
+            recordContainer.removeChild(recordItem);
+            let tempContactList = ContactArray.filter(function(record){
+                return (record.id !== parseInt(recordItem.firstElementChild.lastElementChild.textContent));
+            });
+            ContactArray = tempContactList;
+            //removing from localstorage by overwriting
+            localStorage.setItem('contacts', JSON.stringify(ContactArray));
+        }
+    });
 
 function setMessage(status, message){
     let messageBox = document.querySelector('.message');
@@ -144,11 +150,7 @@ function removeMessage(status, messageBox){
     }, 2000);
 }
 
-document.addEventListener("DOMContentLoaded", function(event) {
-    document.querySelectorAll('img').forEach(function(img){
-    img.onerror = function(){this.style.display='none';};
-    })
- });
+
 
 
 
